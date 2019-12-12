@@ -40,14 +40,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         }
     
     func setUpLabels() {
-        playerScoreLabel = SKLabelNode(fontNamed: "Arial")
+        playerScoreLabel = SKLabelNode(fontNamed: "Comic Sans")
         playerScoreLabel.text = "0"
         playerScoreLabel.fontSize = 75
         playerScoreLabel.position = CGPoint(x: frame.width * 0.25, y: frame.height * 0.10)
         playerScoreLabel.fontColor = UIColor.white
         addChild(playerScoreLabel)
         
-        computerScoreLabel = SKLabelNode(fontNamed: "Arial")
+        computerScoreLabel = SKLabelNode(fontNamed: "Comic Sans")
         computerScoreLabel.text = "0"
         computerScoreLabel.fontSize = 75
         computerScoreLabel.position = CGPoint(x: frame.width * 0.25, y: frame.height * 0.90)
@@ -72,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                 computerScoreLabel.text = String(GameScene.computerScore)
             }
             resetBall()
-            if GameScene.playerScore == 2 || GameScene.computerScore == 2
+            if GameScene.playerScore == 5 || GameScene.computerScore == 5
             {
                 let scene = GameOverScene(size: self.size)
                 scene.scaleMode = .aspectFill
@@ -88,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     func resetBall()
     {
         ball.physicsBody?.velocity = CGVector.zero
-        let wait = SKAction.wait(forDuration: 1)
+        let wait = SKAction.wait(forDuration: 0.1)
         let repositionBall = SKAction.run(bringBallToCenter)
         let pushTheBall = SKAction.run (pushBall)
         let sequence = SKAction.sequence([wait, repositionBall, pushTheBall])
@@ -136,6 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         aiPaddle.position = CGPoint(x: frame.width * 0.5, y: frame.height * 0.8)
         addChild(aiPaddle)
         aiPaddle.name = "aiPaddle"
+        aiPaddle.texture = SKTexture(imageNamed: "shoe2")
         
         aiPaddle.physicsBody = SKPhysicsBody(rectangleOf: aiPaddle.frame.size)
         aiPaddle.physicsBody?.allowsRotation = false
@@ -144,15 +145,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         aiPaddle.physicsBody?.isDynamic = false
         
        run( SKAction.repeatForever(
-            SKAction.sequence([SKAction.run(followBall), SKAction.wait(forDuration: 0.3)])
+            SKAction.sequence([SKAction.run(followBall), SKAction.wait(forDuration: 0.4)])
             ))
 
     }
     
     func followBall()
     {
-        let move = SKAction.moveTo(x: ball.position.x, duration: 0.3)
+        let move = SKAction.moveTo(x: ball.position.x, duration: 0.4)
         aiPaddle.run(move)
+        let move2 = SKAction.moveTo(y: ball.position.y, duration: 0.4)
+        aiPaddle.run(move2)
         
     }
     
@@ -186,10 +189,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         if isFingerOnPaddle == true
         {
             paddle.position.x = location.x
+            paddle.position.y = location.y
         }
         
         
     }
+    
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {

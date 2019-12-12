@@ -12,16 +12,16 @@ import SpriteKit
 class GameOverScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let label = SKLabelNode(fontNamed: "Arial")
+        let label = SKLabelNode(fontNamed: "Comic Sans")
         label.numberOfLines = 2
-        label.text = "GameOver\nYou:\(GameScene.playerScore) Computer:\(GameScene.computerScore) "
+        label.text = "Soccer Over\nYou:\(GameScene.playerScore) Computer:\(GameScene.computerScore) "
         label.fontSize = 50
         label.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         label.name = "label"
         addChild(label)
         
-        let playAgainButton = SKLabelNode(fontNamed: "Arial")
-        playAgainButton.text = "Play Again?"
+        let playAgainButton = SKLabelNode(fontNamed: "Comic Sans")
+        playAgainButton.text = "More Soccer?"
         playAgainButton.fontSize = 50
         playAgainButton.position = CGPoint(x: frame.width / 2, y: frame.height * 0.2)
         playAgainButton.name = "playAgainButton"
