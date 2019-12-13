@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		108C93F323A3F15000853B1B /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 108C93F223A3F15000853B1B /* Spark.sks */; };
+		108C93F923A3F29C00853B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108C93F723A3F29C00853B1B /* Assets.xcassets */; };
+		108C93FB23A3F2E800853B1B /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 108C93FA23A3F2E800853B1B /* Snow.sks */; };
 		10ABB89223956F0F0039EB3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABB89123956F0F0039EB3D /* AppDelegate.swift */; };
 		10ABB89423956F0F0039EB3D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 10ABB89323956F0F0039EB3D /* GameScene.sks */; };
 		10ABB89623956F0F0039EB3D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 10ABB89523956F0F0039EB3D /* Actions.sks */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		108C93F223A3F15000853B1B /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		108C93F723A3F29C00853B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		108C93FA23A3F2E800853B1B /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		10ABB88E23956F0F0039EB3D /* Pong2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ABB89123956F0F0039EB3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10ABB89323956F0F0039EB3D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		10ABB88523956F0F0039EB3D = {
 			isa = PBXGroup;
 			children = (
+				108C93FA23A3F2E800853B1B /* Snow.sks */,
+				108C93F723A3F29C00853B1B /* Assets.xcassets */,
 				10ABB89023956F0F0039EB3D /* Pong2019 */,
 				10ABB88F23956F0F0039EB3D /* Products */,
 			);
@@ -67,6 +75,7 @@
 				10ABB89523956F0F0039EB3D /* Actions.sks */,
 				10ABB89723956F0F0039EB3D /* GameScene.swift */,
 				10D96DD523A14B5100BF4424 /* GameOverScene.swift */,
+				108C93F223A3F15000853B1B /* Spark.sks */,
 				10ABB89923956F0F0039EB3D /* GameViewController.swift */,
 				10ABB89B23956F0F0039EB3D /* Main.storyboard */,
 				10ABB89E23956F110039EB3D /* Assets.xcassets */,
@@ -139,6 +148,9 @@
 				10ABB89F23956F110039EB3D /* Assets.xcassets in Resources */,
 				10ABB8A223956F110039EB3D /* LaunchScreen.storyboard in Resources */,
 				10ABB89623956F0F0039EB3D /* Actions.sks in Resources */,
+				108C93F923A3F29C00853B1B /* Assets.xcassets in Resources */,
+				108C93FB23A3F2E800853B1B /* Snow.sks in Resources */,
+				108C93F323A3F15000853B1B /* Spark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

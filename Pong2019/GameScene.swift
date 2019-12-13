@@ -56,6 +56,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        
+        let spark = SKEmitterNode(fileNamed: "Spark.sks")
+        spark?.position = contact.contactPoint
+        spark?.targetNode = self
+        addChild(spark!)
+        
         print(contact.contactPoint)
         if (contact.bodyA.categoryBitMask == 1 && contact.bodyB.categoryBitMask == 4) || (contact.bodyB.categoryBitMask == 1 && contact.bodyA.categoryBitMask == 4)
         {
@@ -110,6 +116,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     
     override func didMove(to view: SKView)
     {
+        let snow = SKEmitterNode(fileNamed: "Snow.sks")!
+        snow.position = CGPoint(x: frame.width/2, y: frame.height)
+        snow.targetNode = self
+        addChild(snow)
+        
         let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         borderBody.friction = 0.0
         self.physicsBody = borderBody

@@ -12,7 +12,7 @@ import SpriteKit
 class GameOverScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let label = SKLabelNode(fontNamed: "Comic Sans")
+        let label = SKLabelNode(fontNamed: "Comic Sans MS")
         label.numberOfLines = 2
         label.text = "Soccer Over\nYou:\(GameScene.playerScore) Computer:\(GameScene.computerScore) "
         label.fontSize = 50
@@ -20,7 +20,7 @@ class GameOverScene: SKScene {
         label.name = "label"
         addChild(label)
         
-        let playAgainButton = SKLabelNode(fontNamed: "Comic Sans")
+        let playAgainButton = SKLabelNode(fontNamed: "Comic Sans MS")
         playAgainButton.text = "More Soccer?"
         playAgainButton.fontSize = 50
         playAgainButton.position = CGPoint(x: frame.width / 2, y: frame.height * 0.2)
@@ -38,7 +38,7 @@ class GameOverScene: SKScene {
             if node.name == "playAgainButton" {
                 let gameScene = GameScene(fileNamed: "GameScene")
                 gameScene?.scaleMode = .aspectFill
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                let reveal = SKTransition.fade(with: UIColor.red , duration: 1.0)
                 view?.presentScene(gameScene!, transition: reveal)
             }
         }
